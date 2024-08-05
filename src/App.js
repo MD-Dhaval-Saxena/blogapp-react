@@ -6,8 +6,10 @@ import ReactMarkdown from "react-markdown";
 function App() {
   const GITHUB_API_URL = "https://api.github.com/repos/MD-Dhaval-Saxena/blogapp-react";
   const RAW_CONTENT_URL =
-    "https://raw.githubusercontent.com/your-username/your-repo/main/";
+    "https://raw.githubusercontent.com/MD-Dhaval-Saxena/blogapp-react/main/";
 
+
+    // https://raw.githubusercontent.com/MD-Dhaval-Saxena/blogapp-react/main/blogs/javascript.txt
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -15,9 +17,9 @@ function App() {
   }, []);
 
   const fetchPosts = async () => {
-    const response = await axios.get(`${GITHUB_API_URL}/contents`);
+    const response = await axios.get(`${GITHUB_API_URL}/blogs`);
     const markdownFiles = response.data.filter((file) =>
-      file.name.endsWith(".md")
+      file.name.endsWith(".txt")
     );
 
     const postPromises = markdownFiles.map(async (file) => {
