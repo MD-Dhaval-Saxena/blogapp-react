@@ -4,7 +4,7 @@ import axios from "axios";
 import ReactMarkdown from "react-markdown";
 
 function App() {
-  const GITHUB_API_URL = "https://api.github.com/repos/your-username/your-repo";
+  const GITHUB_API_URL = "https://api.github.com/repos/MD-Dhaval-Saxena/blogapp-react";
   const RAW_CONTENT_URL =
     "https://raw.githubusercontent.com/your-username/your-repo/main/";
 
